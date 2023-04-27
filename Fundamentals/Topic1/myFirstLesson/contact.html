@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block & Inline</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+
+    <form>
+      <div>
+        <label for="inputFullname">Fullname</label>
+        <br />
+        <input
+          type="text"
+          id="inputFullname"
+          name="fullname"
+          placeholder="Adinizi daxil edin"
+          disabled
+          required
+        />
+      </div>
+      <br />
+
+      <div>
+        <label for="inputPassword">Password</label>
+        <br />
+        <input type="password" id="inputPassword" autocomplete="off" />
+      </div>
+      <br />
+      <div>
+        <label for="inputEmail">Email</label>
+        <br />
+        <input
+          type="email"
+          id="inputEmail"
+          value="info@eacampschool.com"
+          readonly
+        />
+      </div>
+
+      <div>
+        <label>Color</label>
+        <br />
+        <input type="color" />
+      </div>
+
+      <br />
+      <br />
+
+      <div>
+        <div>Hoppy</div>
+        <br />
+        <label>Football</label>
+        <input type="checkbox" />
+        <br />
+        <label>Pool</label>
+        <input type="checkbox" />
+        <br />
+
+        <label>Cooking</label>
+        <input type="checkbox" />
+      </div>
+      <br />
+      <br />
+
+      <div>
+        <div>Gender</div>
+        <br />
+        <label>Male</label>
+        <input type="radio" name="gender" />
+        <br />
+        <label>Female</label>
+        <input type="radio" name="gender" />
+        <br />
+      </div>
+
+      <br />
+      <div>
+        <label>Number</label>
+        <input type="number" />
+      </div>
+      <br />
+
+      <div>
+        <label>Date</label>
+        <input type="date" />
+      </div>
+      <br />
+
+      <div>
+        <label for="imageInput">
+          <div></div>
+        </label>
+        <input type="file" id="imageInput" style="display: none" />
+      </div>
+      <br />
+
+      <div>
+        <label for="messsage">Message</label>
+        <textarea id="messsage"></textarea>
+      </div>
+
+      <br />
+      <br />
+      <div>
+        <select multiple>
+          <option value="1">BMW</option>
+          <option value="2">Mercedes</option>
+          <option value="3">Kia</option>
+        </select>
+      </div>
+    </form>
+  </body>
+</html>
