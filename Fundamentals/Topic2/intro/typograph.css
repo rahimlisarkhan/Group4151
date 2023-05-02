@@ -1,0 +1,10 @@
+.text-yellow {
+  color: #5dab6d !important;
+  background-color: green;
+
+  /* border-color: #5dab6d; */
+}
+
+.h2 {
+  font-size: 34px;
+}

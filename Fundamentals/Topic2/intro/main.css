@@ -1,0 +1,26 @@
+.list {
+  background-color: blueviolet;
+  width: 200px;
+  /* height: 200px; */
+}
+
+/* For List  */
+
+.list li {
+  display: inline;
+  list-style: none;
+}
+
+.list {
+  color: green;
+}
+
+.list a {
+  font-size: 22px;
+  color: red;
+}
+
+.logo {
+  width: 100px;
+  height: 200px;
+}
