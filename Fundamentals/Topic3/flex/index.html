@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .flex-container {
+        display: flex;
+        height: 400px;
+
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+
+        flex-wrap: wrap;
+
+        /* flex-flow: column wrap; */
+
+        gap: 10px;
+        padding: 10px;
+
+        background-color: DodgerBlue;
+      }
+
+      .flex-container .box {
+        width: 150px;
+        height: 150px;
+        background-color: #f1f1f1;
+        /* margin: 1px; */
+        padding: 20px;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Create a Flex Container</h1>
+
+    <div class="flex-container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <!-- <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">3</div>
+      <div class="box">3</div>
+      <div class="box">3</div>
+      <div class="box">3</div> -->
+    </div>
+  </body>
+</html>

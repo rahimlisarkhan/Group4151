@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 60px 90px;
+}
+
+.delivery-info {
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.delivery-info__item {
+  width: calc(100% / 3);
+  float: left;
+  text-align: center;
+}
+
+.delivery-info__item .item_title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #253444;
+}
+
+.item_info {
+  color: #444;
+  width: 60%;
+  margin: 0 auto;
+  line-height: 15px;
+  font-size: 11px;
+}
+
+.delivery-info:after {
+  display: table;
+  content: "";
+  clear: both;
+}
