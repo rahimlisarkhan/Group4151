@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.parent_box {
+  padding: 10px;
+  background-color: bisque;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.box_left {
+  background-color: red;
+  /* float: left; */
+}
+
+.box_right {
+  background-color: yellow;
+  /* float: right; */
+}
+
+.box_other {
+  /* float: right; */
+  /* clear: both; */
+  background-color: green;
+}
