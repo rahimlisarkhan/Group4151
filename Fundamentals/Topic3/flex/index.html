@@ -10,37 +10,88 @@
         display: flex;
         height: 400px;
 
-        flex-direction: column;
+        /* flex-direction: row;
         justify-content: space-between;
-        align-items: start;
+        align-items: start; */
+        gap: 10px;
 
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
 
         /* flex-flow: column wrap; */
 
-        gap: 10px;
         padding: 10px;
 
         background-color: DodgerBlue;
       }
 
       .flex-container .box {
-        width: 150px;
-        height: 150px;
+        /* width: 150px; */
+        /* height: 150px; */
+        /* width: calc(100% / 3); */
+
         background-color: #f1f1f1;
-        /* margin: 1px; */
-        padding: 20px;
+        /* margin: 10px; */
+        padding: 10px;
         font-size: 30px;
       }
+
+      .box-1 {
+        /* flex-basis: 30%; */
+        flex-grow: 1;
+        /* order: 3; */
+        /* flex-grow: 1; */
+        align-self: stretch;
+
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .box-2 {
+        /* order: 1; */
+        /* flex-basis: 70%; */
+
+        flex-grow: 3;
+
+        /* flex-grow: 1; */
+        /* width: calc(100% / 3); */
+      }
+
+      .box-3 {
+        /* order: 2; */
+        /* flex-basis: 33%; */
+
+        /* width: calc(100% / 3); */
+        /* flex-grow: 1; */
+      }
+
+      /* .box-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .box1-1,
+      .box1-2 {
+        width: 30px;
+        height: 30px;
+        font-size: 10px;
+        background-color: red;
+      } */
     </style>
   </head>
   <body>
     <h1>Create a Flex Container</h1>
 
     <div class="flex-container">
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
+      <div class="box box-1">
+        <!-- <div class="box1-1">1.1</div> -->
+        <!-- <div class="box1-2">1.2</div> -->
+
+        1
+      </div>
+      <div class="box box-2">2</div>
+      <!-- <div class="box box-3">3</div> -->
       <!-- <div class="box">4</div>
       <div class="box">5</div>
       <div class="box">3</div>
