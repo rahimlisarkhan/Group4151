@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    /> -->
+
     <link rel="stylesheet" href="./style.css" />
     <title>Website</title>
   </head>
@@ -18,16 +26,38 @@
       </div>
 
       <div class="buttons_group">
-        <a class="button-register" href="#">Register</a>
-        <a class="button-login" href="#">Login</a>
-        <a class="button-search" href="#">Search</a>
+        <a class="btn button-register" href="#">Register</a>
+        <a class="btn button-login" href="#">Login</a>
+        <a class="btn button-search" href="#">Search</a>
       </div>
     </header>
     <nav class="navbar">
-      <ul>
+      <ul class="list">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="list-item">
+          <a href="#about">About</a>
+
+          <div class="info-nav">
+            <ul>
+              <li>Item</li>
+              <li>Item</li>
+              <li>Item</li>
+              <li>Item</li>
+            </ul>
+          </div>
+        </li>
+        <li class="list-item">
+          <a href="#contact">Contact</a>
+
+          <div class="info-nav">
+            <ul>
+              <li>contact</li>
+              <li>contact</li>
+              <li>contact</li>
+              <li>contact</li>
+            </ul>
+          </div>
+        </li>
         <li><a href="#blog">Blog</a></li>
       </ul>
     </nav>
@@ -42,6 +72,10 @@
             consectetur tempora asperiores! Impedit placeat voluptate doloribus
             quis saepe a ipsum!
           </p>
+
+          <input class="form-input" placeholder="Search" />
+          <div class="error-message">Error</div>
+          <button disabled class="btn-danger">Send</button>
         </div>
         <div class="about_img">
           <img

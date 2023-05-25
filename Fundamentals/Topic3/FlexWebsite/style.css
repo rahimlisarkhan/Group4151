@@ -1,7 +1,26 @@
+/* @import url("./reset.css"); */
+
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap");
+ */
+
+@import url("assets/fonts/Roboto/style.css");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 5px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgb(29, 29, 29); /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 29, 29); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid orange; /* creates padding around scroll thumb */
 }
 
 html {
@@ -10,6 +29,9 @@ html {
 
 body {
   background-color: rgb(29, 29, 29);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-family: "Roboto", sans-serif; */
+  font-family: MyFontRoboto;
 }
 
 #header {
@@ -119,6 +141,15 @@ body {
   font-size: 34px;
   font-weight: 600;
   line-height: 50px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.about_info p {
+  display: none;
+}
+
+.about_info:hover p {
+  display: block;
 }
 
 .about_img {
@@ -131,4 +162,107 @@ body {
 .about_img img {
   height: 300px;
   object-fit: cover;
+}
+
+/* Pseudo -class */
+
+.buttons_group .btn:hover {
+  background-color: orangered;
+  color: #ffff;
+}
+
+.list-item {
+  position: relative;
+}
+
+.list-item:hover .info-nav {
+  display: block;
+}
+
+.info-nav {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.779);
+  width: 200px;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 999;
+
+  color: #ffff;
+}
+
+.info-nav ul {
+  flex-direction: column;
+}
+
+.info-nav li {
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(64, 64, 64);
+}
+
+/* .list li:first-child {
+  background-color: red;
+} */
+
+/* .list li:last-child {
+ 
+  background-color: red;
+} */
+
+/* .list li:nth-child(even) {
+
+  background-color: red;
+} */
+
+/* .list li:nth-child(even) {
+  background-color: red;
+}
+
+.list li:nth-child(even):hover {
+  background-color: yellow;
+} */
+
+.list li:not(:last-child) {
+  background-color: red;
+}
+
+.form-input {
+  width: 100%;
+  height: 51px;
+  border-radius: 4px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: green;
+}
+
+.form-input::placeholder {
+  color: rgba(0, 0, 255, 0.552);
+}
+
+.form-input:focus {
+  outline: 2px solid orange;
+}
+
+.error-message {
+  display: none;
+  color: white;
+  font-size: 34px;
+}
+
+.form-input:focus .error-message {
+  display: block;
+}
+
+.btn-danger {
+  padding: 12px;
+  color: white;
+  background-color: red;
+}
+
+.btn-danger:disabled {
+  opacity: 0.5;
 }
