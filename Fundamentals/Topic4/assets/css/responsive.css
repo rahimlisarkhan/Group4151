@@ -1,0 +1,37 @@
+/* Responsive */
+
+/* Max width */
+/* 600  Mobile statdart  - 480px 
+/*  800  Tablet statdart -- 768px
+/*  1200  Noutbuk statdart -- 992px*/
+
+/* Noutbuk */
+@media screen and (max-width: 1200px) {
+  #header {
+    background-color: blue;
+    flex-direction: column;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 800px) {
+  #header {
+    background-color: green;
+    flex-direction: row;
+  }
+
+  .nav-btn {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  #header {
+    background-color: red;
+  }
+}

@@ -29,6 +29,14 @@ html {
 
 body {
   background-color: rgb(29, 29, 29);
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdOrZI-pdkHRZ9d-A91LIweTGQlrLRxyYh4Hxmzd9r&s"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-position: 50%; */
+
+  /* background-image: linear-gradient(red, yellow); */
+
   /* font-family: Arial, Helvetica, sans-serif; */
   /* font-family: "Roboto", sans-serif; */
   font-family: MyFontRoboto;
@@ -134,14 +142,37 @@ body {
   gap: 20px; */
 
   text-align: center;
+  position: relative;
   color: #ffff;
 }
 
 .about_info h2 {
+  /* display: none; */
+  visibility: hidden;
   font-size: 34px;
   font-weight: 600;
   line-height: 50px;
   font-family: "Open Sans", sans-serif;
+}
+
+/* .about_info h2::after {
+  content: "pro";
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+} */
+
+.about_info h2::before {
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background-color: greenyellow;
+  border-radius: 5px;
+  /* position: absolute;
+
+  top: 0;
+  left: 70px; */
 }
 
 .about_info p {
@@ -157,14 +188,20 @@ body {
   justify-content: center;
 
   margin-top: 24px;
+
+  animation: myAnimation 3s infinite alternate;
 }
 
 .about_img img {
   height: 300px;
   object-fit: cover;
+  box-shadow: 0 0 5px 5px rgba(168, 168, 168, 0.397);
 }
 
 /* Pseudo -class */
+.btn {
+  transition: all 0.5s;
+}
 
 .buttons_group .btn:hover {
   background-color: orangered;
@@ -265,4 +302,14 @@ body {
 
 .btn-danger:disabled {
   opacity: 0.5;
+}
+
+/* animation */
+@keyframes myAnimation {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }

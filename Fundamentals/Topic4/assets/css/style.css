@@ -1,0 +1,53 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(61, 61, 61);
+  padding: 10px;
+}
+
+.nav-btn {
+  width: 55px;
+  display: none;
+  height: 55px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 50%;
+}
+
+.logo {
+  color: #ffff;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar ul li {
+  list-style: none;
+  padding: 5px;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+.navbar ul li:hover {
+  background-color: orangered;
+}
+
+.navbar ul li:hover a {
+  color: white;
+}
+
+.navbar ul a {
+  text-decoration: none;
+  color: orange;
+}
