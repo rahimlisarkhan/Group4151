@@ -1,0 +1,42 @@
+body {
+  background-color: var(--mainGrayLight);
+  font-family: var(--fontRoboto);
+  color: var(--mainTextBlack);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 107px;
+  padding: 30px;
+  border-bottom: 1px solid var(--mainGrayLight2);
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: var(--fontOpenSans);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.navbar a {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--mainTextBlack);
+}
+
+.navbar li:last-child a {
+  color: var(--mainGreenColor);
+  font-weight: 800;
+}

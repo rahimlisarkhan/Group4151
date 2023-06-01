@@ -1,3 +1,17 @@
+:root {
+  /* Colors */
+  --mainColor: rgb(26, 177, 31);
+
+  --mediumSpacing: 12px;
+  --largeSpacing: 16px;
+
+  /* Fonts */
+  --title5: 22px;
+  --body2:18px
+
+  --cardBoxShadow: 0px 0px 4px 4px rgb(153, 153, 153);
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -9,22 +23,25 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: rgb(61, 61, 61);
-  padding: 10px;
+  padding: var(--mediumSpacing) var(--largeSpacing);
 }
 
 .nav-btn {
   width: 55px;
   display: none;
   height: 55px;
-  background-color: orange;
+  background-color: var(--mainColor);
   color: white;
   border: none;
   border-radius: 50%;
+  font-size: var(--body2);
 }
 
 .logo {
   color: #ffff;
   font-weight: bold;
+  background-color: var(--mainColor);
+  box-shadow: var(--cardBoxShadow);
 }
 
 .navbar ul {
@@ -40,7 +57,8 @@ body {
   border-radius: 4px;
 }
 .navbar ul li:hover {
-  background-color: orangered;
+  /* background-color: orangered; */
+  background-color: var(--mainOrangeColor);
 }
 
 .navbar ul li:hover a {
@@ -49,5 +67,5 @@ body {
 
 .navbar ul a {
   text-decoration: none;
-  color: orange;
+  color: var(--mainColor);
 }
