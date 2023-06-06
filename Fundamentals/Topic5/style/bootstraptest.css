@@ -1,0 +1,45 @@
+.d-flex {
+  display: flex !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-yellow {
+  color: yellow;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.gap-1 {
+  gap: 8px;
+}
+
+.gap-2 {
+  gap: 12px;
+}
+
+.card {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgba(115, 115, 115, 0.271);
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  min-height: 350px;
+}

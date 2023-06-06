@@ -1,0 +1,11 @@
+.customCard {
+  width: calc(100% / 4) !important;
+}
+
+.rounded-xl {
+  border-radius: 20px;
+}
+
+.accordion-flush {
+  background-color: red !important;
+}
