@@ -90,7 +90,9 @@ var arr = ["Hello", "Hi", "Bye", "Good", "ayten"];
 
 // console.log(textArr);
 
-var arr = [];
+//Inprimtive
+
+var arr = [1, 2, 3];
 
 var hansiEded = prompt("Hansi eded daxil olunsun?");
 
@@ -99,5 +101,7 @@ arr.push(hansiEded);
 arr.push("");
 
 console.log(arr);
+
+arr.at(-1);
 
 // console.log("text", text[2]);
