@@ -54,6 +54,8 @@ var fruits = ["Mango", "Avakado"];
 var arr = ["Hello", "Hi", "Bye", "Good", "ayten"];
 
 // arr[0] = "Test1";
+
+// console.log(arr[0]);
 // arr[1] = "Test2";
 
 // arr.push(1);
