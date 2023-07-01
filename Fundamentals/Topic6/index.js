@@ -117,4 +117,18 @@ if (price > 14) {
   price = price / 100;
 }
 
-console.log("price:", price);
+// console.log("price:", price);
+
+// var like = confirm("Sushi?");
+
+// var cumle = `Men sushi ${like ? "xoslayiram" : "xoslamiram"}.Esasen menim xosladigm nov ise ${}`;
+
+// alert(cumle);
+
+var susiler = ["a", "b", "c"];
+
+var userchoose = prompt("?").trim().toLowerCase();
+
+// if (susiler.includes(userchoose)) {
+
+// }
