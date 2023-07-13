@@ -26,3 +26,13 @@ console.log(makeUpperCase("hello"));
 console.log(makeUpperCase("Hello"));
 console.log(makeUpperCase("HELLO"));
 console.log(makeUpperCase(""));
+
+// className={[styles.test1,styles.test2]}
+
+// className={`${styles.test1} col-5`}
+
+//? Solition2
+
+var fullname = "   Me lik mem me d ";
+
+function trimWord(str) {} //* Melikmemmed
