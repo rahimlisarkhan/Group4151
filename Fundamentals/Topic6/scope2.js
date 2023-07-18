@@ -103,3 +103,59 @@ function twotop() {
 
 // What will get alerted?
 twotop();
+
+var z = 5;
+// const z = 5;
+// let z = 5;
+
+// var arr1 = [1, 2, 4];
+
+// // var arr2 = arr1;
+// // var arr2 = arr1.concat();
+// // var arr2 = arr1.slice();
+// var arr2 = [...arr1];
+
+// arr2[1] = 101;
+
+// console.log(arr1); //1,2,4
+// console.log(arr2); //1,101,4
+
+function Test3() {
+  // var z = 3;
+  // let z = 3;
+  // const z = 3;
+
+  // console.log(z);
+
+  function Test4() {
+    // var z = 1;
+    console.log(z);
+
+    return 3;
+  }
+
+  return Test4(); //3
+
+  // return "Hello";
+  // return [3, 4, 5];
+}
+
+// var myTestFn = Test3();
+var result = Test3();
+
+// var stringLength = result.length;
+
+// var myTestFn2 = myTestFn;
+
+// Test3();
+// myTestFn();
+// myTestFn2();
+
+// {
+
+//   const t = 6
+//   let z = 6
+
+// }
+
+// console.log(t);

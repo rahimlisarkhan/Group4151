@@ -146,3 +146,42 @@ var arr1 = [3, 5, 1, 6, 8, 1, 11, 1];
 // console.log("newArray:", newArray);
 
 // [1, 3, 5];
+
+var langs = [
+  ["english", "Welcome"],
+  ["turkish", "Merhaba"],
+];
+
+b = 5;
+
+console.log("b", b);
+
+function translate(str) {
+  let arr = [
+    ["english", "Welcome"],
+    ["czech", "Vitejte"],
+    ["danish", "Velkomst"],
+    ["dutch", "Welkom"],
+    ["estonian", "Tere tulemast"],
+    ["finnish", "Tervetuloa"],
+    ["flemish", "Welgekomen"],
+    ["french", "Bienvenue"],
+    ["german", "Willkommen"],
+    ["irish", "Failte"],
+    ["italian", "Benvenuto"],
+    ["latvian", "Gaidits"],
+    ["lithuanian", "Laukiamas"],
+    ["polish", "Witamy"],
+    ["spanish", "Bienvenido"],
+    ["swedish", "Valkommen"],
+    ["welsh", "Croeso"],
+  ];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][0].startsWith(str)) {
+      return arr[i][1];
+    }
+  }
+}
+
+console.log("result", translate("en"));
