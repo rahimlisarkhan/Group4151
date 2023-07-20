@@ -4,23 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Js intro</title>
+
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <button onclick="callme()">Event</button>
+
+    <div id="myContent"></div>
     <h1 id="title" class="title_header">JS Intro</h1>
-    <p id="parag" class="text-danger"></p>
+    <p id="parag" class="text-danger title_header"></p>
 
     <img
       id="headerImg"
       width="200"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAC7M3vLvBCXTvb_yuV-PnfqfoXV1WaXiC1Yg1YWBE&s"
     />
-    <div class="title_header"></div>
+    <div class="title_header">Hello</div>
     <!-- <div class="" id="content">
       <span style="color: red">Text</span>
       <span style="color: red">Text</span>
       <span style="color: red">Text</span>
     </div> -->
-
+    <span class="title_header"></span>
     <!-- <script>
       // Primitive
       var a = 11; //number integer;
@@ -42,6 +47,20 @@
       console.log(sentence);
     </script> -->
 
-    <script src="./dom.js"></script>
+    <!-- <div class="test1">
+
+    </div> -->
+
+    <ul id="list">
+      <!-- <li>Test1</li>
+      <li>Test2</li>
+      <li>Test3</li>
+      <li>Test4</li> -->
+    </ul>
+    <button id="addItemBtn">Add</button>
+    <button id="removeItemBtn">Remove</button>
+    <button id="showItems">Show</button>
+
+    <script src="./events.js"></script>
   </body>
 </html>
