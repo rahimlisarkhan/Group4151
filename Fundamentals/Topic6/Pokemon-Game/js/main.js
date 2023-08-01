@@ -1,3 +1,5 @@
+"use strict";
+
 const pokemons = ["e", "w", "f"];
 
 let player1Score = 0;
@@ -92,3 +94,20 @@ window.onkeydown = startGame;
 // window.navigator.getBattery().then((data) => {
 //   console.log(data);
 // });
+
+function isPalindrome(x) {
+  if (!x) return true;
+
+  let str = x.toLowerCase();
+  let reversestr = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversestr += str[i];
+  }
+
+  if (reversestr == str) {
+    return true;
+  }
+
+  return false;
+}
