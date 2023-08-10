@@ -24,8 +24,8 @@ const student = {
 };
 
 // const result = student.children[0].name;
-// const result = student.married.name;
-const result = student.married["job-position"];
+// const result = student.married.parent;
+// const result = student.married["job-position"];
 
 el.innerHTML = result;
 // const result = student["1bornIn"];

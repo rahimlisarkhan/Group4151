@@ -47,16 +47,45 @@ const car = {
 
     this.monitor();
   },
+
+  // log: () => {
+  log: function () {
+    console.log("this", this);
+
+    // const thisContent = this;
+
+    // const randomIndex = function(){
+    // function randomIndex() {
+    //   // console.log("randomIndex this", this);
+    //   console.log("randomIndex thisContent", thisContent);
+    //   thisContent.speed += 100;
+    //   thisContent.monitor();
+    // }
+
+    const randomIndex = () => {
+      console.log("randomIndex this", this);
+      // this.speed += 100;
+      // this.monitor();
+
+      const randomIndexAll = () => {
+        console.log("randomIndexAll", this);
+      };
+      randomIndexAll();
+    };
+
+    randomIndex();
+  },
 };
 
 // const car2 = { ...car };
 
-car.getRandomSpeed();
-car.getRandomSpeed();
-car.getRandomSpeed();
-const result = car.getRandomSpeed(); //34
+car.log();
+// car.getRandomSpeed();
+// car.getRandomSpeed();
+// car.getRandomSpeed();
+// const result = car.getRandomSpeed(); //34
 
-car.monitor("John");
+// car.monitor("John");
 
 // car.start();
 // car.start();
@@ -75,5 +104,45 @@ car.monitor("John");
 
 // car2.monitor();
 
-el.style.backgroundColor = car.light ? "yellow" : "white";
-console.log(car);
+// el.style.backgroundColor = car.light ? "yellow" : "white";
+// console.log(car);
+
+// function A() {
+//   console.log("A", this);
+// }
+
+// A();
+
+// var myObj = {
+//   name: "",
+
+//   yell: function () {
+//     this.name = "Star Powerup";
+
+//     //this obj
+
+//     var changeName = function (newName) {
+//       //this window
+//       this.name = newName;
+//     };
+
+//     changeName("Blue Shell"); // window.name = Blue Shell
+
+//     console.log("example", this); // obj name =  Star Powerup
+//   },
+
+// };
+
+// myObj.yell();
+
+// const MyMath = {
+//   PI: 3.1457378628738273,
+
+//   randomNumber: function () {
+
+//   },
+// };
+
+// MyMath.PI
+
+// MyMath.randomNumber()
