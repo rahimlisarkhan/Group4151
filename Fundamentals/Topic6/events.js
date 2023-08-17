@@ -57,4 +57,14 @@ for (let i = 0; i < firstArr.length; i++) {
   result += `${firstArr[i]} ${secondArr[i] ?? " "}\n`;
 }
 
-console.log(result);
+// let isCash = true;
+
+// if (window.location.hash === "#cash") {
+//   addbalance();
+//   return;
+// }
+
+// if (window.location.hash === "#withdraw") {
+//   rmvBalance();
+//   return;
+// }
