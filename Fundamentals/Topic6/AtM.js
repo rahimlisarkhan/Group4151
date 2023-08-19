@@ -69,3 +69,5 @@ customerIzzetM.addMany.addEventListener("click", function () {
   let price = +prompt("Balansinizi artiramaq ucun qiymet daxil edin.");
   customerIzzetM.increment(price);
 });
+
+const mirzeSBMW = new Bmw("Mirze", 30000);
