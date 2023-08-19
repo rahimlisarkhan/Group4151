@@ -3,74 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Js intro</title>
-
-    <link rel="stylesheet" href="./style.css" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./src/assest/styles/main.css" />
   </head>
   <body>
-    <button onclick="callme()">Event</button>
+    <main>
+      <div class="show">
+        <form id="regestration_form" class="regestration_form" action="">
+          <p id="err_message" class="err_message"></p>
+          <h2>Welcome to ATM</h2>
+          <div class="name_form same_property">
+            <label class="form_label" for=""> Name </label>
+            <input
+              type="name"
+              class="form_input"
+              id="name_input"
+              placeholder="Please Enter your Name"
+            />
+          </div>
+          <div class="age_form same_property">
+            <label class="form_label" for=""> Age </label>
+            <input
+              type="text"
+              class="form_input"
+              id="age_input"
+              placeholder="Please Enter your Age"
+            />
+          </div>
+          <button id="send_button" class="form_button">Send Data</button>
+        </form>
+      </div>
 
-    <div id="myContent"></div>
-    <h1 id="title" class="title_header">JS Intro</h1>
-    <p id="parag" class="text-danger title_header"></p>
-
-    <div id="imgContent">
-      <img
-        id="headerImg"
-        width="200"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAC7M3vLvBCXTvb_yuV-PnfqfoXV1WaXiC1Yg1YWBE&s"
-      />
-
-      <p id="imgInfo">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa omnis
-        labore aliquid impedit necessitatibus quos, provident fugiat minima
-        cumque ullam molestias itaque quisquam qui fuga quaerat. Maxime officia
-        laudantium et.
-      </p>
-    </div>
-
-    <div class="title_header">Hello</div>
-    <!-- <div class="" id="content">
-      <span style="color: red">Text</span>
-      <span style="color: red">Text</span>
-      <span style="color: red">Text</span>
-    </div> -->
-    <span class="title_header"></span>
-    <!-- <script>
-      // Primitive
-      var a = 11; //number integer;
-
-      var b = 12.5; //number integer (float);
-
-      //   var Ayxan = 1;
-
-      //   var name = 'Ayxan';
-      //   var name = "Ayxan";
-      //   var name = `Ayxan
-      //   Mikayilzade
-      //   `;
-
-      var age = 21;
-
-      var sentence = `John is ${age} old`; //string
-
-      console.log(sentence);
-    </script> -->
-
-    <!-- <div class="test1">
-
-    </div> -->
-
-    <ul id="list">
-      <!-- <li>Test1</li>
-      <li>Test2</li>
-      <li>Test3</li>
-      <li>Test4</li> -->
-    </ul>
-    <button id="addItemBtn">Add</button>
-    <button id="removeItemBtn">Remove</button>
-    <button id="showItems">Show</button>
-
-    <script src="./events.js"></script>
+      <div class="noShow">
+        <h1 id="user_name"></h1>
+        <div>
+          <button id="add_many" class="addMany">Karta Pul Elave Et</button>
+          <button id="pay_many" class="payMany">Kartdan Pul Cixard</button>
+        </div>
+        <div>
+          <button id="show_balance" class="showBalance">Balansi Goster</button>
+        </div>
+        <div id="my_balance"></div>
+      </div>
+    </main>
   </body>
+
+  <script src="AtM.js"></script>
 </html>
