@@ -125,3 +125,25 @@ Array.prototype.uzunlugunDe = function () {
 const myArray = [2, 5];
 
 console.log("myArray", myArray.uzunlugunDe());
+
+Object;
+
+Object.prototype.findKey = function () {};
+
+Array;
+Function;
+Boolean;
+
+// Array.prototype.uzunlugunDe
+
+const obj = {};
+
+obj.prototype === Object.prototype;
+
+obj._proto_ === Object.prototype;
+
+function A() {}
+
+// A.prototype === Function.prototype
+
+// Function.prototype === Object.prototype
