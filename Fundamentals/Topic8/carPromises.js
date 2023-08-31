@@ -73,6 +73,6 @@ function showLoading(show) {
 
 //? https://school.eacampschool.com/course/view.php?id=7&section=8
 
-//? http://omdb.com/movie/?t=titanic&year=1990
+//? http://omdb.com/movie?t=titanic&year=1990
 
 const myPromises = null;
