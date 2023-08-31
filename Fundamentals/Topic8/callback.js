@@ -69,4 +69,27 @@ function hesablayan(sahe, ustadinDediyi) {
 
 // hesablayan(55, isiqUstasi);
 // hesablayan(55, suUstasi);
-hesablayan(55, qapiUstasi);
+// hesablayan(55, qapiUstasi);
+
+let temperature = prompt(
+  "What Temperature Do You Want To Convert? Select One F or C"
+);
+let degree = prompt(
+  "What Degree Your Temperature (don't need to write F or C)"
+);
+
+console.log("temperature", temperature);
+
+if (temperature.toLowerCase() == "f") {
+  console.log("F....");
+
+  let F = (degree * 9) / 5 + 32;
+  alert(`Converted: ${F} F`);
+} else if (temperature.toLowerCase() == "c") {
+  console.log("C....");
+
+  let C = ((degree - 32) * 5) / 9;
+  alert(`Converted: ${C} C`);
+} else {
+  alert("Wrong information");
+}
