@@ -76,3 +76,5 @@ function showLoading(show) {
 //? http://omdb.com/movie?t=titanic&year=1990
 
 const myPromises = null;
+
+//? http://www.omdbapi.com/?apikey=a407a7b3&t=titanic

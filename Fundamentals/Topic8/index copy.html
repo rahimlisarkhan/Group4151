@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>topic 8</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1 class="h1 p-5 text-white bg-danger">Turbo.az</h1>
+
+    <main class="container">
+      <div class="d-flex justify-content-center mt-5 d-none" id="loadingEl">
+        <div
+          class="spinner-border text-danger"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
+      <div class="alert alert-danger h3 d-none" id="errorAlert">
+        Network Error
+      </div>
+      <div class="d-flex flex-wrap gap-4 my-5" id="carList">
+        <!-- <div class="card" style="width: 18rem">
+          <img
+            class="img-fluid"
+            src="https://images.unsplash.com/photo-1616455579100-2ceaa4eb2d37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym13JTIwY2FyfGVufDB8fDB8fHww&w=1000&q=80"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title">Car1</h5>
+            <p class="card-text">23400$</p>
+            <div class="text-warning">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <a href="#" class="btn btn-danger pull-right">Read more</a>
+          </div>
+        </div> -->
+      </div>
+    </main>
+
+    <script src="./backend.js"></script>
+    <script src="./carPromises.js"></script>
+  </body>
+</html>
