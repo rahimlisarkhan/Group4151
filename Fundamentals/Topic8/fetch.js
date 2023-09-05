@@ -17,6 +17,7 @@ async function getMovie(title) {
     );
 
     const data = await response.json();
+
     renderDetail(data);
   } catch (err) {
     console.log("err", err);
