@@ -1,0 +1,9 @@
+.panel {
+  position: absolute;
+  left: -100%;
+  transition: all 0.1;
+}
+
+.show {
+  left: 100%;
+}

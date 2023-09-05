@@ -122,6 +122,12 @@ for (index in nodeList) {
 
   el.style.backgroundColor = "pink";
   el.style.fontSize = "45px";
+  el.style.fontSize = "45px";
+
+  //   el.css({
+  //     fontSize:15,
+  //     color:"white"
+  // })
 
   el.setAttribute("data-name", index + 1);
 }
