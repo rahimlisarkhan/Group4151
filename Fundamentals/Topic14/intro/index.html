@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        display: flex;
+        min-height: 100vh;
+      }
+      .menu {
+        width: 30%;
+        display: none;
+        background-color: red;
+      }
+      .panel {
+        width: 100%;
+        background-color: wheat;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="content">
+        <div class="menu"></div>
+        <div class="panel">
+          <h1>Client Store</h1>
+
+          <button class="open">open</button>
+
+          <div>
+            <input id="name" />
+            <br />
+            <input id="age" />
+            <br />
+
+            <input id="job" />
+            <br />
+            <br />
+            <button id="sendBtn">Send</button>
+          </div>
+
+          <br />
+
+          <ul class="listEl"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
