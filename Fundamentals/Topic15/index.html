@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase</title>
+  </head>
+  <body>
+    <button id="createBtn">Create</button>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        push,
+        onValue,
+        remove,
+        update,
+      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC6xQsCQTyEoqe-0KrrsUMlXs1vJibjccc",
+        authDomain: "group4151-5c99f.firebaseapp.com",
+        projectId: "group4151-5c99f",
+        storageBucket: "group4151-5c99f.appspot.com",
+        messagingSenderId: "86430365627",
+        appId: "1:86430365627:web:5cc26a8a3d00df4cc7b69e",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const db = getDatabase(app);
+
+      //Helper
+      function writeSetData(collection, data) {
+        const colRef = ref(db, collection);
+
+        set(colRef, data);
+      }
+
+      function writePushData(collection, data) {
+        const colRef = ref(db, collection);
+
+        push(colRef, data);
+      }
+
+      function readData(collection, onData) {
+        const starCountRef = ref(db, collection);
+
+        onValue(starCountRef, (snapshot) => {
+          const data = snapshot.val();
+
+          const newData = Object.entries(data).map((item) => ({
+            id: item[0],
+            ...item[1],
+          }));
+
+          onData(newData);
+        });
+      }
+
+      function removeDataID(collection, id) {
+        const rmvCol = ref(db, collection + id);
+        remove(rmvCol).then(() => {
+          console.log("Success");
+        });
+      }
+
+      function uptDataID(collection, id, data) {
+        const refUpt = ref(db, collection + id);
+
+        update(refUpt, data);
+      }
+
+      writeSetData("about", {
+        title: "Test1",
+        desc: "Test22 daddasdj",
+        img_url: "https://dsds.com/gg.jpg",
+      });
+
+      readData("contact", (data) => {
+        console.log("contact:", data);
+      });
+
+      readData("books", (data) => {
+        console.log("books:", data);
+      });
+
+      document
+        .querySelector("#createBtn")
+        .addEventListener("click", function () {
+          //   writePushData("contact", {
+          //     name: "Mustafa",
+          //     phone: 555555555,
+          //   });
+
+          removeDataID("contact/", "-NfFFdvDl3p1V3vLS21H");
+        });
+    </script>
+  </body>
+</html>
