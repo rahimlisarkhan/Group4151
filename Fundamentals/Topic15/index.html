@@ -4,9 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Firebase</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
-    <button id="createBtn">Create</button>
+    <div class="d-flex flex-column gap-4 w-75 p-5">
+      <input class="form-control" placeholder="fullname" id="fullname" />
+      <input class="form-control" placeholder="age" id="age" type="number" />
+      <input
+        class="form-control"
+        placeholder="sallary"
+        id="sallary"
+        type="number"
+      />
+
+      <button id="sendBtn" class="btn btn-danger">Send</button>
+    </div>
+
+    <div class="w-75 p-5">
+      <table class="table table-light table-hover">
+        <thead>
+          <tr>
+            <th>Fullname</th>
+            <th>Age</th>
+            <th>Salary</th>
+          </tr>
+        </thead>
+        <tbody id="list">
+          <!-- <tr>
+            <td>John</td>
+            <td>43</td>
+            <td>2330</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
 
     <script type="module">
       // Import the functions you need from the SDKs you need
@@ -37,9 +81,14 @@
       const app = initializeApp(firebaseConfig);
 
       const db = getDatabase(app);
+      // const auth = getAuth(app);
+      // const storage = getStorage(app);
 
       //Helper
       function writeSetData(collection, data) {
+        const randomId = Date.now() + Math.random().toString();
+
+        // const colRef = ref(db, collection + "/" + randomId);
         const colRef = ref(db, collection);
 
         set(colRef, data);
@@ -51,11 +100,18 @@
         push(colRef, data);
       }
 
-      function readData(collection, onData) {
+      function readData(collection, onData, handle) {
         const starCountRef = ref(db, collection);
 
         onValue(starCountRef, (snapshot) => {
           const data = snapshot.val();
+
+          console.log(data);
+
+          if (!handle) {
+            onData(data);
+            return;
+          }
 
           const newData = Object.entries(data).map((item) => ({
             id: item[0],
@@ -68,8 +124,9 @@
 
       function removeDataID(collection, id) {
         const rmvCol = ref(db, collection + id);
+
         remove(rmvCol).then(() => {
-          console.log("Success");
+          alert("Success");
         });
       }
 
@@ -79,30 +136,69 @@
         update(refUpt, data);
       }
 
-      writeSetData("about", {
-        title: "Test1",
-        desc: "Test22 daddasdj",
-        img_url: "https://dsds.com/gg.jpg",
+      //Dom
+      const sendBtn = document.querySelector("#sendBtn");
+      const fullname = document.querySelector("#fullname");
+      const age = document.querySelector("#age");
+      const sallary = document.querySelector("#sallary");
+      const list = document.querySelector("#list");
+
+      readData("employees", renderList, true);
+
+      sendBtn.addEventListener("click", function () {
+        if (
+          !fullname.value.trim() ||
+          !age.value.trim() ||
+          !sallary.value.trim()
+        ) {
+          alert("Xanalari duzgun doldurun!");
+          return;
+        }
+
+        const personal = {
+          fullname: fullname.value,
+          age: age.value,
+          sallary: sallary.value,
+        };
+
+        console.log(personal);
+        writePushData("employees", personal);
+
+        fullname.value = "";
+        age.value = "";
+        sallary.value = "";
+        alert("Ugurla elave olundu");
+        // removeDataID("contact/", "-NfFFdvDl3p1V3vLS21H");
       });
 
-      readData("contact", (data) => {
-        console.log("contact:", data);
+      function removePersonalInfo(id) {
+        console.log(id);
+      }
+
+      function renderList(data) {
+        console.log(data);
+
+        list.innerHTML = data
+          ?.map(
+            (personal) => `
+          <tr>
+            <td>${personal.fullname}</td>
+            <td>${personal.age}</td>
+            <td>${personal.sallary} <button class="btn btn-danger btn-sm ms-2 btn-del" value="${personal.id}" > Sil</button></td>
+          </tr>
+          `
+          )
+          .join("");
+      }
+
+      document.addEventListener("click", function (e) {
+        const isButton = e.target.classList.contains("btn-del");
+        if (!isButton) return;
+
+        const id = e.target.value;
+
+        removeDataID("employees/", id);
       });
-
-      readData("books", (data) => {
-        console.log("books:", data);
-      });
-
-      document
-        .querySelector("#createBtn")
-        .addEventListener("click", function () {
-          //   writePushData("contact", {
-          //     name: "Mustafa",
-          //     phone: 555555555,
-          //   });
-
-          removeDataID("contact/", "-NfFFdvDl3p1V3vLS21H");
-        });
     </script>
   </body>
 </html>
