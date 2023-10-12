@@ -96,14 +96,16 @@ var arr = ["Hello", "Hi", "Bye", "Good", "ayten"];
 
 var arr = [1, 2, 3];
 
-var hansiEded = prompt("Hansi eded daxil olunsun?");
+console.log("arr", arr);
 
-arr.push(hansiEded);
+// var hansiEded = prompt("Hansi eded daxil olunsun?");
 
-arr.push("");
+// arr.push(hansiEded);
 
-console.log(arr);
+// arr.push("");
 
-arr.at(-1);
+// console.log(arr);
+
+// arr.at(-1);
 
 // console.log("text", text[2]);
