@@ -1,5 +1,7 @@
 import { Card } from "./components/Card";
+import { Carousel } from "./components/Carousel";
 import { Header } from "./components/Header";
+import { RegisterButtonGroup } from "./components/Register";
 
 const listAbout = ["List 1", "List 2", "List3", "List4"];
 
@@ -13,6 +15,9 @@ function App() {
     <div className="App">
       <h1>React</h1>
       <Header onlineUserCount={5} />
+
+      <Carousel isEmptyImg={false} />
+
       <Card
         imageUrl="https://m.media-amazon.com/images/I/41gLY7Ecj5L.jpg"
         price={3999}
@@ -32,6 +37,11 @@ function App() {
         classNameTitle="text-danger"
         otherInfo={{ company: "Borsh", year: 2023 }}
       />
+
+      <footer>
+        <hr />
+        <RegisterButtonGroup online={5} />
+      </footer>
     </div>
   );
 }

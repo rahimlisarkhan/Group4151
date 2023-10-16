@@ -1,0 +1,13 @@
+.title {
+  background-color: red;
+}
+
+.price {
+  color: green;
+  display: none;
+}
+
+.price_bg {
+  background-color: yellow;
+  display: block;
+}
