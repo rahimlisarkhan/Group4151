@@ -41,15 +41,16 @@ export const Carousel = ({ isEmptyImg }) => {
       <ul>{list}</ul>
 
       <ul>{list2}</ul>
+
       <h2>Islediyi saatlar: {resultTime} </h2>
     </div>
   );
 };
 
-// const myObj = {
-//   name: "Fullname",
-//   age: 32,
-// };
+const myObj = {
+  name: "Fullname",
+  age: 32,
+};
 
 // const { name, age } = myObj;
 // // console.log(myObj.age);

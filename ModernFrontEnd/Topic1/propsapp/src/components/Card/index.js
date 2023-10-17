@@ -11,17 +11,17 @@ export const Card = ({
 }) => {
   const isShow = false;
 
-  //   console.log("props", props);
+  // console.log("props", props);
 
-  //   const {
-  //     imageUrl,
-  //     isNew,
-  //     title,
-  //     price,
-  //     className,
-  //     classNameTitle,
-  //     otherInfo,
-  //   } = props;
+  // const {
+  //   imageUrl,
+  //   isNew,
+  //   title,
+  //   price,
+  //   className,
+  //   classNameTitle,
+  //   otherInfo,
+  // } = props;
 
   return (
     <div className={className}>
