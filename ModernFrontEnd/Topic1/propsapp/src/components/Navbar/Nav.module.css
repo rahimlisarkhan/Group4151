@@ -1,0 +1,14 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background-color: antiquewhite;
+
+  transition: all 0.3s;
+}
+
+.dark_mode {
+  background-color: black;
+  color: white;
+  left: 0%;
+}

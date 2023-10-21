@@ -4,7 +4,7 @@
 
 .price {
   color: green;
-  display: none;
+  /* display: none; */
 }
 
 .price_bg {
