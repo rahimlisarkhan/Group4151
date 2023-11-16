@@ -17,6 +17,11 @@ function App() {
     <>
       <Routes>
         {/* <Route path="/" element={<Navigate to="/home" replace />} /> */}
+        {/* <Route path="/" element={}/>
+        <Route path="/:operator/:num1/:num2" element={}/> */}
+        {/* "/subtract/4/3"  1 */}
+        
+
         <Route path={ROUTER.HOME} element={<Home />} />
         <Route path={ROUTER.ABOUT} element={<About />} />
 
