@@ -11,13 +11,8 @@ const instanceAxios = axios.create({
 });
 
 export const getMovies = async () => {
-  try {
-    const res = await instanceAxios.get("/?s=movie");
-
-    return res;
-  } catch (err) {
-    console.log("err", err);
-  }
+  const res = await instanceAxios.get("/?s=movie");
+  return res;
 };
 
 export const getMovieID = async (id) => {

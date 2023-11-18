@@ -1,15 +1,29 @@
-import React, { memo, useCallback, useMemo, useRef, useState } from "react";
+import React, {
+  memo,
+  useCallback,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import Header from "../../components/Header";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const pi = 3.14;
 
-const headers = ["Name", "ATH", "Points"];
+// const headers = ["Name", "ATH", "Points"];
 // const user = 90;
 
 const About = memo((props) => {
   const [data, setData] = useState(0);
   const [data2, setData2] = useState(0);
   const [data3, setData3] = useState(0);
+
+  const id = useId();
+
+  console.log("id", id);
+
+  useDocumentTitle("About | App");
 
   // const pi = useRef(3.14 * props.price);
 
