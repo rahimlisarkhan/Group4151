@@ -1,15 +1,22 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeValue, decrement, increment } from "./store/user/userSlice";
+import {
+  changeValue,
+  decrement,
+  increment,
+  getPrognos,
+} from "./store/user/userSlice";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export function Home() {
   const state = useSelector((umumiState) => umumiState.userReducer);
+  const infoWheather = useSelector((umumiState) => umumiState.userReducer.info);
 
   const dispatch = useDispatch();
 
-  console.log("state", state);
+  console.log("infoWheather", infoWheather);
 
   const handleChangeCount = () => {
     // const obj = increment()
@@ -28,12 +35,21 @@ export function Home() {
     dispatch(decrement());
   };
 
+  useEffect(() => {
+    dispatch(getPrognos());
+  }, []);
+
+  const handleSearchWheather = (t) => {
+    dispatch(getPrognos(t));
+  };
+
   return (
     <>
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
 
       <div>
+        <input onChange={(e) => handleSearchWheather(e.target.value)} />
         <a href="https://vitejs.dev" target="_blank">
           <img
             src={"https://cdn.worldvectorlogo.com/logos/redux.svg"}
