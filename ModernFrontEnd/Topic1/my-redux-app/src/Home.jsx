@@ -6,9 +6,14 @@ import {
   decrement,
   increment,
   getPrognos,
+  getMoviesAction,
 } from "./store/user/userSlice";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import ResponsiveAppBar from "./shared/components/AppHeader";
+import MultiActionAreaCard from "./shared/components/ProductCard";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { Container } from "@mui/material";
 
 export function Home() {
   const state = useSelector((umumiState) => umumiState.userReducer);
@@ -16,7 +21,9 @@ export function Home() {
 
   const dispatch = useDispatch();
 
-  console.log("infoWheather", infoWheather);
+  console.log("state", state);
+
+  const movies = state.movies.Search;
 
   const handleChangeCount = () => {
     // const obj = increment()
@@ -36,8 +43,16 @@ export function Home() {
   };
 
   useEffect(() => {
-    dispatch(getPrognos());
+    const disObj = getMoviesAction();
+
+    console.log(disObj);
+
+    dispatch(disObj);
   }, []);
+
+  // useEffect(() => {
+  //   dispatch(getPrognos());
+  // }, []);
 
   const handleSearchWheather = (t) => {
     dispatch(getPrognos(t));
@@ -45,7 +60,19 @@ export function Home() {
 
   return (
     <>
-      <Link to="/">Home</Link>
+      <ResponsiveAppBar />
+
+      <Container sx={{ my: 2 }}>
+        <Grid2 container spacing={4}>
+          {movies?.map((movie) => (
+            <Grid2 xs={6} md={4} lg={3} key={movie.imdbID}>
+              <MultiActionAreaCard {...movie} />
+            </Grid2>
+          ))}
+        </Grid2>
+      </Container>
+
+      {/* <Link to="/">Home</Link>
       <Link to="/about">About</Link>
 
       <div>
@@ -67,7 +94,7 @@ export function Home() {
       <h1>Status: {state.status}</h1>
       <button onClick={handleChangeCount}>Change</button>
       <button onClick={handleIncCount}>Plus</button>
-      <button onClick={handleDecCount}>Minus</button>
+      <button onClick={handleDecCount}>Minus</button> */}
     </>
   );
 }

@@ -1,21 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { getMovies, getWheather } from "../../service";
 
-export const getPrognos = createAsyncThunk(
-  "/getPrognos",
-  async (city = "Baku") => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d32bd17e782e54a0729a829c462c76ac`;
+export const getPrognos = createAsyncThunk("/getPrognos", getWheather);
+export const getMessage = createAsyncThunk("/getMessage", getWheather);
 
-    const res = await fetch(url);
-    const data = await res.json();
-
-    return data;
-  }
+export const getMoviesAction = createAsyncThunk(
+  "/getMoviesActionIzzet",
+  getMovies
 );
 
 const initialState = {
   count: 0,
   status: null,
   info: null,
+  messages: [],
+  isLoading: false,
+  error: null,
+  movies: [],
   // basket: [{ id: 5, count: 1, name: "Apple" }],
 };
 
@@ -83,9 +84,24 @@ export const userSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(getPrognos.fulfilled, (state, action) => {
-      state.info = action.payload;
-    });
+    builder
+      .addCase(getPrognos.fulfilled, (state, action) => {
+        state.info = action.payload;
+      })
+      .addCase(getMessage.fulfilled, (state, action) => {
+        state.messages = action.payload;
+      }) //? Movies Case --
+      .addCase(getMoviesAction.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getMoviesAction.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.movies = action.payload;
+      })
+      .addCase(getMoviesAction.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = "Error";
+      });
   },
 });
 
