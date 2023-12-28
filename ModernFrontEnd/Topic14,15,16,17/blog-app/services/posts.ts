@@ -1,3 +1,4 @@
+import { PostDataType } from "../interface/data";
 import { ENDPOINTS } from "../shared/constants/endpoints";
 import { instanceAxios } from "../shared/helpers/instanceAxios";
 
@@ -10,8 +11,9 @@ export const getPostID = (id: number | string) =>
 // export const addUser = (form) =>
 //   instanceAxios({ method: "POST", url: ENDPOINTS.USERS, data: form });
 
-// export const uptUser = (id, form) =>
-//   instanceAxios({ method: "PUT", url: ENDPOINTS.USER_ID(id), data: form });
+// export const uptPost = (id: number, form: Omit<PostDataType, "id">) =>
+export const uptPost = ({ id, ...data }: PostDataType) =>
+  instanceAxios({ method: "PUT", url: ENDPOINTS.POST_ID(id), data });
 
 // export const rmvUser = (id) =>
 //   instanceAxios({ method: "DELETE", url: ENDPOINTS.USER_ID(id) });

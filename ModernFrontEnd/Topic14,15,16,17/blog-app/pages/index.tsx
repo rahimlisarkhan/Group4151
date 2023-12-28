@@ -12,6 +12,7 @@ import { getPosts } from "../services/posts";
 import { useMemo } from "react";
 import PostCard from "../shared/components/Card";
 import { PostDataType } from "../interface/data";
+import { useRouter } from "next/router";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,8 @@ export default function Home<NextPage>(
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) {
   console.log("props", props);
+
+  const { push } = useRouter();
 
   const posts = useMemo(() => props.posts, [props.posts]);
 
@@ -38,7 +41,11 @@ export default function Home<NextPage>(
       <Layout footer>
         <div className="max-w-6xl mx-auto py-10 flex flex-wrap gap-5">
           {posts?.map((post: PostDataType) => (
-            <PostCard key={post.id} {...post} />
+            <PostCard
+              key={post.id}
+              {...post}
+              onClick={() => push("/detail/" + post.id)}
+            />
           ))}
         </div>
       </Layout>

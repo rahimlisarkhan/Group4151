@@ -10,6 +10,7 @@ const Header = () => {
         <div>
           <Avatar
             name="RA"
+            color="yellow"
             onAvatarPress={() => {
               console.log("avatar..");
             }}
