@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../../shared/components/Layout";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getPostID, uptPost } from "../../../services/posts";
 import { useRouter } from "next/router";
 import { useForm } from "../../../shared/hooks/useForm";
 
 const EditPage = () => {
   const { push, query } = useRouter();
+
+  // const queryClient = useQueryClient();
+
+  // const userData = queryClient.getQueryData("postlarim");
 
   const post_id = query.post_id as string | number;
 
@@ -19,8 +23,16 @@ const EditPage = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: uptPost,
     mutationKey: ["update_post"],
-    onSuccess: () => {
+    onSuccess: (newPostData) => {
       push("/detail/" + post_id);
+
+      // queryClient.invalidateQueries({
+      //   queryKey: ["postlarim"],
+      // });
+
+      //       const postlarim = queryClient.getQueryData(["postlarim"])
+      //       const newPostlarim = [...postlarim,newPostData]
+      // queryClient.setQueryData(["postlarim"],newPostlarim)
     },
   });
 
